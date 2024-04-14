@@ -1,7 +1,9 @@
 ﻿using MediatR;
+using RoyalLibrary.Domain.DTO;
 using RoyalLibrary.Domain.Repository;
 using RoyalLibrary.Domain.Util;
 using System;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +26,9 @@ namespace RoyalLibrary.Application.Queries.GetBooks
             {
                 var books = await BookRepository.GetAsync(req.SearchBookBy, req.SearchBookValue);
 
-                Resp.Books = books;
+                var booksDto = books.Select(x => new BookDTO(x)).ToList();
+
+                Resp.Books = booksDto;
                 Resp.StatusCode = (int)HttpStatusCode.OK;
             }
             catch (Exception ex)
