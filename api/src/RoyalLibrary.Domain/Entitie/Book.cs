@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RoyalLibrary.Domain.Entitie
 {
     [Table("books")]
-    public class Book
+    public class Book : EventArgs
     {
         [Key]
         [Column("book_id")]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RoyalLibrary.Domain.Repository;
-using RoyalLibrary.Infra.Repository.MySql;
+using RoyalLibrary.Infra.Repository.SqlServer;
 
 namespace RoyalLibrary.CrossCutting.DependencyInjection
 {

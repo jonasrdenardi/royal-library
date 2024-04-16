@@ -33,6 +33,9 @@ namespace RoyalLibrary.Api
             services.AddMvc();
             services.AddMediatR(typeof(GetBooksQuery));
             services.AddCors();
+            services.AddCaches();
+            services.AddNotifications();
+            services.AddHandlers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

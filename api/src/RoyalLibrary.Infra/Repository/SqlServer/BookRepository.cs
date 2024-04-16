@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RoyalLibrary.Infra.Repository.MySql
+namespace RoyalLibrary.Infra.Repository.SqlServer
 {
     public class BookRepository : IBookRepository
     {
