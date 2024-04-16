@@ -3,7 +3,6 @@ import SearchForm from './components/SearchForm';
 import DataTable from './components/DataTable';
 import { Container } from '@mui/material';
 
-// Definindo o enum SearchBook
 enum SearchBook {
   Title = 1,
   Author = 2,
