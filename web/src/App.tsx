@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import SearchForm from './components/SearchForm';
 import DataTable from './components/DataTable';
+import { Container } from '@mui/material';
+
+// Definindo o enum SearchBook
+enum SearchBook {
+  Title = 1,
+  Author = 2,
+  Type = 3,
+  ISBN = 4,
+  Category = 5
+}
 
 const App: React.FC = () => {
   const [searchResults, setSearchResults] = useState<any[]>([]);
 
-  const handleSearch = async (searchBy: string, searchValue: string) => {
+  const handleSearch = async (searchBy: SearchBook, searchValue: string) => {
     try {
       const response = await fetch(`https://localhost:5001/books?SearchBookBy=${searchBy}&SearchBookValue=${searchValue}`);
       if (!response.ok) {
@@ -19,11 +29,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <Container maxWidth="sm">
       <h1>Search App</h1>
       <SearchForm onSearch={handleSearch} />
       <DataTable data={searchResults} />
-    </div>
+    </Container>
   );
 };
 

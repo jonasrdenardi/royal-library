@@ -16,28 +16,28 @@ interface DataTableProps {
 
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
   return (
-    <table>
+    <table style={{ borderCollapse: 'collapse', width: '100%' }}>
       <thead>
-        <tr>
-          <th>Book Title</th>
-          <th>Publisher</th>
-          <th>Author</th>
-          <th>Type</th>
-          <th>ISBN</th>
-          <th>Category</th>
-          <th>Available Copies</th>
+        <tr style={{ borderBottom: '1px solid #ddd' }}>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Book Title</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Publisher</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Author</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Type</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>ISBN</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Category</th>
+          <th style={{ border: '1px solid #ddd', padding: '8px' }}>Available Copies</th>
         </tr>
       </thead>
       <tbody>
         {data.map((book, index) => (
-          <tr key={index}>
-            <td>{book.title}</td>
-            <td>{book.publisher}</td>
-            <td>{book.author}</td>
-            <td>{book.type}</td>
-            <td>{book.isbn}</td>
-            <td>{book.category}</td>
-            <td>{book.availableCopies}</td>
+          <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.title}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.publisher}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.author}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.type}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.isbn}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.category}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px', whiteSpace: 'nowrap' }}>{book.availableCopies}</td>
           </tr>
         ))}
       </tbody>
